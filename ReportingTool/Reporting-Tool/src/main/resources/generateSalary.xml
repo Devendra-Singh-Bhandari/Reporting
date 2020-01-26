@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QUERIES>
+    <SQL ID="GenerateSalary">
+    SELECT * FROM employee_master em
+	WHERE em.employee_id=(SELECT employee_id
+	FROM salary_info s1 WHERE 3-1=(SELECT COUNT(DISTINCT salary) FROM salary_info s2
+	WHERE s2.salary > s1.salary))
+    </SQL>
+</QUERIES>
